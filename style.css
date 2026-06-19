@@ -1,0 +1,138 @@
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(135deg, #ff0000, #ffcc00, #00ccff);
+    background-size: 600% 600%;
+    animation: gradientMove 15s ease infinite;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+section {
+    background: #f8f8f8;
+    border-radius: 15px;
+    max-width: 350px;
+    text-align: center;
+    padding: 20px;
+    border: 4px solid #ffcc00;
+    position: relative;
+}
+
+#pokemon-name {
+    text-transform: capitalize;
+    font-size: 26px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#pokemon-image {
+    width: 180px;
+    height: 180px;
+    object-fit: fill;
+    margin: 10px auto;
+    border-radius: 12px;
+    background: #fff;
+}
+.stats-chart {
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+    height: 150px;
+}
+
+.stat-bar {
+    width: 40px;
+    background: #ddd;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+}
+
+.stat-fill {
+    background: linear-gradient(to top, #ff6600, #ffcc00);
+    width: 100%;
+    transition: height 0.6s ease;
+    position: absolute;
+    bottom: 0;
+}
+
+#pokemon-abilities {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+#pokemon-abilities li:hover {
+    transform: scale(1.1);
+    background: linear-gradient(135deg, #ffd633, #ffb84d);
+}
+
+.ability-container {
+    margin: 12px 0;
+    text-align: left;
+}
+
+.ability-container span {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    text-transform: capitalize;
+    color: #333;
+}
+
+.ability-bar {
+    background: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 14px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.ability-fill {
+    background: linear-gradient(90deg, #ffcc00, #ff6600);
+    height: 100%;
+    transition: width 0.6s ease;
+}
+
+h2 {
+    margin-top: 15px;
+    font-size: 18px;
+    color: #444;
+    border-bottom: 2px solid #ffcc00;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+ul li {
+    background: #fff;
+    margin: 5px 0;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    text-align: left;
+    font-size: 14px;
+}
