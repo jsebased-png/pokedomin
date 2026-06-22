@@ -36,29 +36,31 @@ const pokemonSelected = async (pokemonUrl) => {
             li.textContent = `${stat.stat.name}: ${stat.base_stat}`;
             pokemonStats.appendChild(li);
         });
-        
-response.abilities.forEach(ability => {
-    const abilityContainer = document.createElement("div");
-    abilityContainer.classList.add("ability-container");
+        response.abilities.forEach(ability => {
+            const abilityContainer = document.createElement("div");
+            abilityContainer.classList.add("ability-container");
 
-    const abilityName = document.createElement("span");
-    abilityName.textContent = ability.ability.name;
+            const abilityName = document.createElement("span");
+            abilityName.textContent = ability.ability.name;
 
-    const abilityBar = document.createElement("div");
-    abilityBar.classList.add("ability-bar");
+            const abilityBar = document.createElement("div");
+            abilityBar.classList.add("ability-bar");
 
-    const abilityFill = document.createElement("div");
-    abilityFill.classList.add("ability-fill");
+            const abilityFill = document.createElement("div");
+            abilityFill.classList.add("ability-fill");
 
-    const randomPower = Math.floor(Math.random() * 100);
-    abilityFill.style.width = randomPower + "%";
+            const randomPower = Math.floor(Math.random() * 100);
+            abilityFill.style.width = randomPower + "%";
 
-    abilityBar.appendChild(abilityFill);
-    abilityContainer.appendChild(abilityName);
-    abilityContainer.appendChild(abilityBar);
+            abilityBar.appendChild(abilityFill);
+            abilityContainer.appendChild(abilityName);
+            abilityContainer.appendChild(abilityBar);
 
-    pokemonAbilities.appendChild(abilityContainer);
-});
+            pokemonAbilities.appendChild(abilityContainer);
+        });
+        const types = response.types.map(t => t.type.name).join(", ");
+        document.getElementById("pokemon-image-container").setAttribute("data-type", "Tipo: " + types);
+
 
     } catch (error) {
         console.error("Error fetching pokemon details:", error);
