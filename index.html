@@ -10,23 +10,45 @@
 </head>
 
 <body>
-    <section>
-        <div>
-            <label for="pokemons">ELige tu Pokemón</label>
-            <select id="pokemons" onchange="pokemonSelected(this.value)">
-                <option value="">Select a Pokemon</option>
-            </select>
-        </div>
+    <div class="bg-animated"></div>
+    <div class="particles" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+    </div>
 
-        <div id="pokemon-info">
-            <h1 id="pokemon-name"></h1>
-            <div id="pokemon-image-container">
-                <img id="pokemon-image" alt="pokemon">
+    <main class="app-shell">
+        <section class="pokedex-card">
+            <header class="pokedex-header">
+                <h1>PokéDomin</h1>
+                <p>Selecciona tu Pokémon y explora sus estadísticas</p>
+            </header>
+
+            <div class="selector-wrap">
+                <label for="pokemons">Elige tu Pokémon</label>
+                <select id="pokemons" onchange="pokemonSelected(this.value)">
+                    <option value="">Selecciona un Pokémon</option>
+                </select>
             </div>
-            <ul id="pokemon-stats"></ul>
-            <ul id="pokemon-abilities"></ul>
-        </div>
-    </section>
+
+            <div id="pokemon-info" class="pokemon-info">
+                <h2 id="pokemon-name"></h2>
+
+                <div id="pokemon-image-container" class="pokemon-image-container">
+                    <img id="pokemon-image" alt="pokemon">
+                </div>
+
+                <div class="panel">
+                    <h3>Estadísticas</h3>
+                    <ul id="pokemon-stats" class="stats-list"></ul>
+                </div>
+
+                <div class="panel">
+                    <h3>Habilidades</h3>
+                    <ul id="pokemon-abilities" class="abilities-list"></ul>
+                </div>
+            </div>
+        </section>
+    </main>
 </body>
 
 </html>
